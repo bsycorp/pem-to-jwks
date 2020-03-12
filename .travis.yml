@@ -1,0 +1,16 @@
+language: go
+go:
+- 1.13.x
+script:
+- make
+deploy:
+  provider: releases
+  api_key:
+    secure: VQQqIYZ/GvnF/TFr+mQ2866O0OfpafWBfyiLKZpj1ssMn7hoInWxror6SR0H4RtrRQJv9BdEbv0UOMRQ7yvVfES7k4E9daK+PkU82N2MSluMsJAtqaX4WOaEJH5YQqhErUKvK81qGKk9DXlUvTdWp9GyXIAXA6LE7d1SZOAditJmLasUoDA/RKxKrpjW8SB8//lYgtoT3IcKaNfCzTvBuWffXJX+Hr10d0FeXERu3EaijVezz42ZD2dC70vlN89T3uHBcOY7A0Tz48HxSJZuytbbYGPju32iT9UtAZRJDS5M6pvDT2AcpmEOgMQZYIUD61Xy8gyohjVuQDn+Ai3A+W4gnDiCPzseevKhcbXDnqKqrjEt0++ZVNATcAZSjz0sBs/2Ip6n+tsgLrzAA7TSQpNtyYsbO+07JYLvPfbiXHMsKpnD2bjLoEkif505JVGX3CIK0wbKsQIuACzJMccdV6oOVLzIvUdjgloE7GmG+kej0sLMeEZkrlTky3XSYhGu1HqjM1D2lzXMqa2lv9Ylb4Hl/+0XGvo3nt4mNt4u2s1ZjypyLCUUGsp5fFffZXEdng2n5olurRYVQzdurbv0QVOCAGdJmupyBjliGicYxLJGsRaV5ubBTTZ0zU4sAwVBklgRGq/WNy6uEP9eJ+Nv2h21DCMVe8Ut7/iDgEw0stE=
+  skip_cleanup: true
+  file:
+   - "build/pem-to-jwks-linux"
+   - "build/pem-to-jwks-darwin"
+  on:
+    tags: true
+    repo: bsycorp/pem-to-jwks
